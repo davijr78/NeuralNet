@@ -1,31 +1,28 @@
 import numpy as np
 
-class Neuron:
-    def __init__(self, weights, bias):
-        self.weights = weights
-        self.bias = bias
+def exact_value(x):
+    return x**2 - 2*x + 3
 
-    def feedforward(self, inputs):
-        total = 0
-        for i in range(len(self.weights)):
-            total += self.weights[i] * inputs[i]
-        return total + self.bias
+X_Training = np.random.randint(low=-1000, high=1000, size=(100, 1))
+X_Testing = np.random.randint(low=-1000, high=1000, size=(100, 1))
+W = np.random.rand(10,1)
+Y = np.random.rand(1, )
+B = np.random.rand(10,1)
 
-class NeuralNetwork:
-    def __init__(self, size_of_input_layer, size_of_hidden_layer, size_of_output_layer):
-        weights = np.array([0, 1])
-        bias = np.array([0, 1])
-        self.h1 = Neuron(weights, bias)
-        self.h2 = Neuron(weights, bias)
-        self.o1 = Neuron(weights, bias)
+def activation(x):
+    return 1 / (1 + np.exp(-x))
 
-    def feedforward(self, inputs):
-        total = 0
-        for i in range(len(self.weights)):
-            total += self.weights[i] * inputs[i]
+def forward_pass(x, w, b):
+    return activation(np.dot(x, w) + b
 
-def main():
-    print(np.array([0, 1]))
 
-if __name__ == "__main__":
-    main()
+
+def cost_function(x):
+    pass
+
+
+print(forward_pass(X[1], W, B))
+
+
+
+
