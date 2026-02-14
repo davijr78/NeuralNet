@@ -18,8 +18,8 @@ def activation(x):
 def forward_pass(x, w, b):
     return np.dot(x, w) + b
 
-def cost_function(x):
-    pass
+def cost(x):
+    return ((x - exact_value(x))**2)/2
 
 def back_prop(x, w, b):
     pass
