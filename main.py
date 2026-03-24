@@ -10,7 +10,11 @@ W1 = np.random.rand(16, 1)
 W2 = np.random.rand(1, 16)
 B1 = np.random.rand(16, 1)
 B2 = np.random.rand(1, 1)
-C = 0
+
+dw1 = 0
+dw2 = 0
+db1 = 0
+db2 = 0
 
 def activation(x):
     return 1 / (1 + np.exp(-x))
@@ -21,16 +25,23 @@ def forward_pass(x, w, b):
 def cost(x):
     return ((x - exact_value(x))**2)/2
 
-def back_prop(x, w, b):
-    pass
+def back_prop(x, z1, h1, o):
+    x = np.array(x).reshape(1, 1)
+    dL_dw1 = 0
+    dL_dw2 = 0
+    dL_db1 = 0
+    dL_db2 = 0
 
 def train(x, w1, b1, w2, b2, epochs):
     for epoch in range(epochs):
         for i in x:
+            i = np.array(i).reshape(1, 1)
             z1 = forward_pass(i, w1, b1)
             h1 = activation(z1)
             o = forward_pass(h1, w2, b2)
-            return o
+
+    return w1, b1, w2, b2
+
 
 def test(x, w1, w2, b1, b2):
     pass
