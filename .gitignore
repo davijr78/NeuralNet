@@ -1,6 +1,10 @@
-.python-version
-pyproject.toml
-README.md
-uv.lock
+/first_nn/pyproject.toml
+/first_nn/uv.lock
+/mnist_dataset/.python-version
+/mnist_dataset/pyproject.toml
+/mnist_dataset/uv.lock
+/mnist_dataset/.claude
 .gitignore
-.idea*
+.venv
+.idea
+

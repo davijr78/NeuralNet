@@ -11,7 +11,7 @@ W2 = np.random.rand(16, 1)
 B1 = np.random.rand(1, 16)
 B2 = np.random.rand(1, 1)
 
-learning_rate = 0.01
+learning_rate = 0.1
 
 def activation(x):
     return 1 / (1 + np.exp(-x))
@@ -66,7 +66,7 @@ def test(x, w1, w2, b1, b2):
     print(f"Average test loss: {total_loss / len(x)}")
 
 def main():
-    w1, b1, w2, b2 = train(X_Training, W1, B1, W2, B2, 100, learning_rate)
+    w1, b1, w2, b2 = train(X_Training, W1, B1, W2, B2, 2000, learning_rate)
     test(X_Testing, w1, w2, b1, b2)
 
 if __name__ == '__main__':
